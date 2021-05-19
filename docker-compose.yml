@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  front:
+    container_name: frontend_apache
+    build:
+      dockerfile: ./front/Dockerfile
+      context: .
+    #image: python:latest
+    restart: always
+    ports:
+      - '9090:80'
+    volumes:
+      - ./front:/usr/local/apache2/htdocs
+  
